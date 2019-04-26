@@ -1,4 +1,4 @@
 ﻿{
-    "connectionString": "mongodb://localhost/node-mongo-registration-login-api",
+    "connectionString": "mongodb://nooklyn-flats-backend-apis:nooklyn-flats-backend-apis@123321_@host1:port1,host2:port2/nooklyn-flats-backend-apis",
     "secret": "THIS IS USED TO SIGN AND VERIFY JWT TOKENS, REPLACE IT WITH YOUR OWN SECRET, IT CAN BE ANY STRING"
 }
