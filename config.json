@@ -1,5 +1,5 @@
 ﻿{
-    "connectionString": "mongodb+srv://nooklyn-flats-backend-apis:123321nk@cluster0-6mbxf.mongodb.net/test?retryWrites=true",
+    "connectionString": " mongodb://username:nooklyn-flats-backend-apis@123321_@ds01316.mlab.com:1316/nooklyn-flats-backend-apis",
     "secret": "THIS IS USED TO SIGN AND VERIFY JWT TOKENS, REPLACE IT WITH YOUR OWN SECRET, IT CAN BE ANY STRING"
 }
-  
+ 
