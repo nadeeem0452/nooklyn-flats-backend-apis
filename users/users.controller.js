@@ -5,10 +5,14 @@ const userService = require('./user.service');
 // routes
 router.post('/authenticate', authenticate);
 router.post('/register', register);
+router.put('/questions', updateUserQuestion);
+router.get('/questions', getQuestionByUserId);
 router.get('/', getAll);
 router.get('/current', getCurrent);
 router.get('/:id', getById);
 router.put('/:id', update);
+
+
 router.delete('/:id', _delete);
 
 module.exports = router;
@@ -48,7 +52,18 @@ function update(req, res, next) {
         .then(() => res.json({}))
         .catch(err => next(err));
 }
+function updateUserQuestion(req, res, next) {
+    userService.updateQuestionData(req.body)
+        .then(() => res.json({}))
+        .catch(err => next(err));
 
+}
+function getQuestionByUserId(req, res, next) {
+    userService.getQuestionDataByUserId(req.body)
+        .then(user => user ? res.json(user.questions) : res.sendStatus(404))
+        .catch(err => next(err));
+}
+  
 function _delete(req, res, next) {
     userService.delete(req.params.id)
         .then(() => res.json({}))
