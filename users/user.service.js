@@ -12,6 +12,7 @@ module.exports = {
     update,
 	updateQuestionData,
 	getQuestionDataByUserId,  
+	profileImageData,
     delete: _delete
 };
 
@@ -85,6 +86,14 @@ async function updateQuestionData(userParam) {
 async function getQuestionDataByUserId(userParam) {
     return await User.findById(userParam.id).select('-hash');
 }
+
+//Upload Image
+
+async function profileImageData(userParam) {
+    return await User.findById(userParam.id).select('-hash');
+}
+
+
 async function _delete(id) {
     await User.findByIdAndRemove(id);
 }

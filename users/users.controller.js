@@ -7,6 +7,7 @@ router.post('/authenticate', authenticate);
 router.post('/register', register);
 router.put('/questions', updateUserQuestion);
 router.get('/questions', getQuestionByUserId);
+router.get('/uploads', profileImageData);
 router.get('/', getAll);
 router.get('/current', getCurrent);
 router.get('/:id', getById);
@@ -61,6 +62,12 @@ function updateUserQuestion(req, res, next) {
 function getQuestionByUserId(req, res, next) {
     userService.getQuestionDataByUserId(req.body)
         .then(user => user ? res.json(user.questions) : res.sendStatus(404))
+        .catch(err => next(err));
+}
+
+function profileImageData(req, res, next) {
+    userService.profileImageData(req.body)
+        .then(user => user ? res.json(user.Images) : res.sendStatus(404))
         .catch(err => next(err));
 }
   

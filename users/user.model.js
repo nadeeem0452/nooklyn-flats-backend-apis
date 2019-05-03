@@ -48,14 +48,18 @@ const schema = new Schema({
 		 PartTime: { type: String, required: false }, 
 		 StudentFullTime: { type: String, required: false },
 		 StudentPartTime: { type: String, required: false }
-		} 
-		
+		},
 		
 		
 		
 	},  
-	  
-    	
+	
+	Images:{
+			imageName: { type: String, required: false  },
+			imageData: { data: Buffer, type: String, required: false  }
+	
+	},
+	
 	
      createdDate: { type: Date, default: Date.now }
 });
