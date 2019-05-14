@@ -14,8 +14,8 @@ module.exports = {
 	updateQuestionData,
 	getQuestionDataByUserId,  
 	profileImageData,
-	UserRole,
-	getAgent,
+	UserRole, 
+	getAllUserBasedOnRole,
 	delete: _delete
 };
 
@@ -34,11 +34,12 @@ async function authenticate({ username, password }) {
 
 async function getAll() {
     return await User.find().select('-hash');
-}
-async function getAgent() {
-    return await User.find().select('-hash');
-}
+} 
 
+async function getAllUserBasedOnRole(userRole) { 
+    return await User.find({ Role: userRole}).select('-hash');
+}
+ 
 
 async function getById(id) {
     return await User.findById(id).select('-hash');

@@ -43,9 +43,24 @@ function userRole(req, res, next) {
         return res.status(200).json({ role: req.user.role, id: req.user.sub });
 }
 //AgentRole Details
-function AgentRole(req, res, next) {	 
-        return res.status(200).json({ role: req.user.role, id: req.user.sub });
+function AgentRole(req, res, next) {	
+
+  const currentUser = req.user;
+    const id = parseInt(req.params.id); 
+	
+	//const agentId = agentId.id;
+     
+	  if (id !== currentUser.sub && currentUser.role !== Role.Agent) {
+        return res.status(401).json({ message: 'Unauthorized Agent' });
+    }
+     //const agent="Agent";
+	 const role_name="Agent";
+     return res.status(200).json({ role: req.user.role.role_name, id: req.user.sub });
+	 
+	  
+	 
 }
+
 
 function getUserAllQuestions(req, res, next) {
     userService.getQuestionDataByUserId(req.user.sub)
@@ -65,6 +80,7 @@ function update(req, res, next) {
         .then(() => res.json({}))
         .catch(err => next(err));
 }
+
 function updateUserQuestions(req, res, next) {
     userService.updateQuestionData(req.user.sub,req.body)
         .then(() => res.json({}))
@@ -76,6 +92,8 @@ function _delete(req, res, next) {
         .then(() => res.json({}))
         .catch(err => next(err));
 }
+
+
 
 function getUserById(req, res, next) {
     const currentUser = req.user;
@@ -98,8 +116,10 @@ function getAllUserDetails(req, res, next) {
         return res.status(401).json({ message: 'Unauthorized' });
     } 
 		
-    userService.getAll()
-        .then(users => res.json(users))
+    const role_name="User";
+    userService.getAllUserBasedOnRole(role_name)
+          .then(users => res.json(users))
+		// .then(user => user ? res.json(user.role) : res.sendStatus(404))
         .catch(err => next(err));
 }
 
@@ -107,17 +127,17 @@ function getAllAgentDetails(req, res, next) {
 	const currentUser = req.user;
    
     // only allow admins to access other user records
-	  if ( currentUser.role !== Role.Agent) {
+	  if ( currentUser.role !== Role.Admin) {
         return res.status(402).json({ message: 'Unauthorized Agent' });
     } 
-	
-    userService.getAgent()
-          .then(users => res.json(Role.Agent))
+	const role_name="Agent";
+    userService.getAllUserBasedOnRole(role_name)
+          .then(users => res.json(users))
 		// .then(user => user ? res.json(user.role) : res.sendStatus(404))
         .catch(err => next(err));
 		
     
-}
+}  
 
 
 /* function getById(req, res, next) {

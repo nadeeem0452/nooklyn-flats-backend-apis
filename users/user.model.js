@@ -6,8 +6,8 @@ const Role = require('_helpers/role');
 const schema = new Schema({
     username: { type: String, unique: true, required: true },
     hash: { type: String, required: true },
-	questionsNecessary: { type: String, required: true },
-    interestedRoommate: { type: String, required: true },
+	questionsNecessary: { type: String, required: false },
+    interestedRoommate: { type: String, required: false },
 	 questions: {
 		
 		LookingRoommate:{
@@ -81,6 +81,8 @@ const schema = new Schema({
 	
 	},
 	
+	  DOB: { type: String },	
+	  gender: { type: String },	
       Role: { type: String, required: true },
      createdDate: { type: Date, default: Date.now }
 });

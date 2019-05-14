@@ -1,16 +1,28 @@
-const List = require('../models/list.model.js');
+const ApartmentList = require('../models/apartmentList.model.js');
+const Role = require('../../_helpers/role.js');
 
+ 
 // Create and Save a new List
 exports.create = (req, res) => {
-    // Validate request
-    if(!req.body.title) {
+	
+	//Validate User Role who create Apartment Listing
+
+	const currentUser = req.user;
+    const id = parseInt(req.params.id);
+    // only allow admins to access other user records
+    if (id !== currentUser.sub && currentUser.role !== Role.Agent) {
+        return res.status(401).json({ message: 'Unauthorized Agent' });
+    }
+	
+    if(!req.body.title ) {
         return res.status(400).send({
-            message: "List Title can not be empty"
+            message: "ApartmentList Title can not be empty"
         });
     }
-
+	
+	
     // Create a List
-    const list = new List({
+    const apartmentList = new ApartmentList({
         title: req.body.title || "Untitled List", 
         description: req.body.description,
 		address: req.body.address,
@@ -18,8 +30,11 @@ exports.create = (req, res) => {
 		agentId: req.user.sub
     });
 
-    // Save List in the database
-    list.save()
+	  // Save List in the database
+	  
+	 
+	
+    apartmentList.save()
     .then(data => {
         res.send(data);
     }).catch(err => {
@@ -30,9 +45,10 @@ exports.create = (req, res) => {
 };
 
 
+
 // Retrieve and return all lists from the database.
 exports.findAll = (req, res) => {
-    List.find()
+    ApartmentList.find()
     .then(lists => {
         res.send(lists);
     }).catch(err => {
@@ -45,18 +61,18 @@ exports.findAll = (req, res) => {
 
 // Find a single list with a listId
 exports.findOne = (req, res) => {
-    List.findById(req.params.listId)
-    .then(list => {
-        if(!list) {
+    ApartmentList.findById(req.params.listId)
+    .then(apartmentList => {
+        if(!apartmentList) {
             return res.status(404).send({
-                message: "List not found with id " + req.params.listId
+                message: "ApartmentList not found with id " + req.params.listId
             });            
         }
-        res.send(list);
+        res.send(apartmentList);
     }).catch(err => {
         if(err.kind === 'ObjectId') {
             return res.status(404).send({
-                message: "List not found with id " + req.params.listId
+                message: "ApartmentList not found with id " + req.params.listId
             });                
         }
         return res.status(500).send({
@@ -71,24 +87,24 @@ exports.update = (req, res) => {
     // Validate Request
     if(!req.body.title) {
         return res.status(400).send({
-            message: "List Title can not be empty"
+            message: "ApartmentList Title can not be empty"
         });
     }
 
     // Find list and update it with the request body
-    List.findByIdAndUpdate(req.params.listId, {
-        title: req.body.title || "Untitled List",
+    ApartmentList.findByIdAndUpdate(req.params.listId, {
+        title: req.body.title || "Untitled ApartmentList",
         description: req.body.description,
 		address: req.body.address,
 		ListImage: req.body.ListImage
     }, {new: true})
-    .then(list => {
-        if(!list) {
+    .then(apartmentList => {
+        if(!apartmentList) {
             return res.status(404).send({
                 message: "List not found with id " + req.params.listId
             });
         }
-        res.send(list);
+        res.send(apartmentList);
     }).catch(err => {
         if(err.kind === 'ObjectId') {
             return res.status(404).send({
@@ -105,22 +121,22 @@ exports.update = (req, res) => {
 
 // Delete a list with the specified listId in the request
 exports.delete = (req, res) => {
-    List.findByIdAndRemove(req.params.listId)
-    .then(list => {
-        if(!list) {
+    ApartmentList.findByIdAndRemove(req.params.listId)
+    .then(apartmentList => {
+        if(!apartmentList) {
             return res.status(404).send({
-                message: "List not found with id " + req.params.listId
+                message: "ApartmentList not found with id " + req.params.listId
             });
         }
-        res.send({message: "List deleted successfully!"});
+        res.send({message: "ApartmentList deleted successfully!"});
     }).catch(err => {
         if(err.kind === 'ObjectId' || err.name === 'NotFound') {
             return res.status(404).send({
-                message: "List not found with id " + req.params.listId
+                message: "ApartmentList not found with id " + req.params.listId
             });                
         }
         return res.status(500).send({
-            message: "Could not delete list with id " + req.params.listId
+            message: "Could not delete ApartmentList with id " + req.params.listId
         });
     });
 };

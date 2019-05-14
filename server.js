@@ -24,6 +24,12 @@ app.use('/users', require('./users/users.controller'));
 // api agent
 app.use('/agents', require('./agents/agent.controller'));
 
+// Apartments Lists routes
+require('./Listings/routes/apartmentList.routes.js')(app);
+
+// Rooms Lists routes
+require('./Listings/routes/roomsList.routes.js')(app);
+
 // Configuring the database
 const dbConfig = require('./config/database.config.js');
 
@@ -39,17 +45,10 @@ const server = app.listen(port, function () {
 });
 
 
-
-
-
 //const dbConfig = require('./config.json');
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-
-
-// Require Lists routes
-require('./Listings/routes/list.routes.js')(app);
 
 
 // Connecting to the database

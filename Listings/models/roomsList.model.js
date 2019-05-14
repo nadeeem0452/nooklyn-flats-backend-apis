@@ -1,13 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
- const User = require('../../users/user.model.js');
- const schema = require('../../users/user.model.js');
- //const id = require('../../users/user.service.js');
- 
 
- //console.log( User.findById(id) );
- //console.log( id );
 
 const ListSchema = new Schema({
 		title:{	type: String, required: false },
@@ -31,7 +25,7 @@ const ListSchema = new Schema({
 
 ListSchema.set('toJSON', { virtuals: true });
 
-module.exports = mongoose.model('List', ListSchema);
+module.exports = mongoose.model('RoomsList', ListSchema);
 
 //module.exports = mongoose.model('User', schema);  
 
