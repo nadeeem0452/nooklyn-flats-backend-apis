@@ -1,3 +1,3 @@
 module.exports = {
-    url: 'mongodb://localhost:/node-mongo-registration-login-api'
+    url: 'mongodb+srv://nooklyn-flats-backend-apis:123321nk@cluster0-6mbxf.mongodb.net/test?retryWrites=true'
 }
