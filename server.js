@@ -19,16 +19,25 @@ app.get('/', (req, res) => {
 });
          
 // api routes        
-app.use('/users', require('./users/users.controller'));
+app.use('/users', require('./controllers/users.controller'));
 
 // api agent
-//app.use('/agents', require('./agents/agent.controller'));
+//require('./Dashboard/agent/agent.js')(app);
 
 // Apartments Lists routes
-require('./Listings/routes/apartmentList.routes.js')(app);
+require('./api/routes/apartmentList.routes.js')(app);
+
+// Property Lists routes
+require('./api/routes/agentPropertyList.routes.js')(app);
+
+//Agent List Count
+require('./api/routes/agentCreatedlistcount.route.js')(app);
+
+//Favourite List Count
+require('./api/routes/favouriteList.route.js')(app);
 
 // Rooms Lists routes
-require('./Listings/routes/roomsList.routes.js')(app);
+require('./api/routes/roomsList.routes.js')(app);
 
 // Configuring the database
 const dbConfig = require('./config/database.config.js');
