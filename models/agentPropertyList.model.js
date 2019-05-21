@@ -67,15 +67,15 @@ const PropertySchema = new Schema({
 		
 		InUnit: { type: Boolean, required: false, default: null },
 		
-		SharedInBuilding:{ type: Boolean, required: false, unique: false },
+		SharedInBuilding:{ type: Boolean, required: false },
 		
-		NoPetsAllowed:{ type: Boolean, required: false, unique: false },
+		NoPetsAllowed:{ type: Boolean, required: false },
 		
-		Catsok:{ type: Boolean, required: false, unique: false }, 
+		Catsok:{ type: Boolean, required: false }, 
 		
-		SmallDogsOk:{ type: Boolean, required: false, unique: false },
+		SmallDogsOk:{ type: Boolean, required: false },
 		
-		LargeDogsOk:{ type: Boolean, required: false, unique: false },
+		LargeDogsOk:{ type: Boolean, required: false },
 		
 		PhotosAndMedia:{ 
 							path:  { type: String,  required: false ,

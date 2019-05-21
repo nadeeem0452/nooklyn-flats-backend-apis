@@ -33,8 +33,14 @@ require('./api/routes/agentPropertyList.routes.js')(app);
 //Agent List Count
 require('./api/routes/agentCreatedlistcount.route.js')(app);
 
-//Favourite List Count
+//Favourite List
 require('./api/routes/favouriteList.route.js')(app);
+
+//Favourite Roommates
+require('./api/routes/favouriteRoommate.routes.js')(app);
+
+//Agent List Applications
+require('./api/routes/ListAllApplication.routes.js')(app);
 
 // Rooms Lists routes
 require('./api/routes/roomsList.routes.js')(app);

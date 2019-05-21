@@ -25,6 +25,7 @@ exports.create = (req, res) => {
     // Create a List
     const favouritelist = new FavouriteList({
         favourite: req.body.favourite,
+        unFavourite: req.body.unFavourite,
 		Userid: currentUser.sub,
 		room_list_id: req.body.room_list_id
 		
@@ -51,13 +52,33 @@ exports.create = (req, res) => {
 
 
 // Retrieve and return all lists from the database.
-exports.fetchallFavList = (req, res) => {
+exports.fetchallFavListByAgent = (req, res) => {
 	
 	const currentUser = req.user;
     const id = parseInt(req.params.id);
     // only allow admins to access other user records
     if (id !== currentUser.sub && currentUser.role !== Role.Agent) {
         return res.status(401).json({ message: 'Unauthorized Agent' });
+    }
+	
+    FavouriteList.find()
+    .then(lists => {
+        res.send(lists);
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message || "Some error occurred while retrieving Favourite lists."
+        });
+    });
+};
+
+// Retrieve fav List By Userand return all lists from the database.
+exports.fetchallFavListByUser = (req, res) => {
+	
+	const currentUser = req.user;
+    const id = parseInt(req.params.id);
+    // only allow admins to access other user records
+    if (id !== currentUser.sub && currentUser.role !== Role.User) {
+        return res.status(401).json({ message: 'Unauthorized User' });
     }
 	
     FavouriteList.find()

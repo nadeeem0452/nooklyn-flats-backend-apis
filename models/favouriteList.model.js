@@ -6,6 +6,8 @@ const favouriteSchema = new Schema({
 		
 		favourite: { type: String, required: true },
 		
+		unFavourite: { type: Boolean, required: false },
+		
 		Userid: { type:String, required: true },
 		
 		room_list_id: { type:String, required: true, unique: true },

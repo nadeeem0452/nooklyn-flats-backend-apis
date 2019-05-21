@@ -11,47 +11,58 @@ const schema = new Schema({
 	 questions: {
 		
 		LookingRoommate:{
-		 Quiet: { type: String, required: false },
-		 Loud: { type: String, required: false },
-		 Tidy: { type: String, required: false },
-		 Messy: { type: String, required: false }
+		 Quiet: { type: Boolean, required: false },
+		 Loud: { type: Boolean, required: false },
+		 Tidy: { type: Boolean, required: false },
+		 Messy: { type: Boolean, required: false }
 		},
 		
 		LookingInRoommates:{
-		 Quiet: { type: String, required: false },
-		 Loud: { type: String, required: false },
-		 Tidy: { type: String, required: false },
-		 Messy: { type: String, required: false }
+		 Quiet: { type: Boolean, required: false },
+		 Loud: { type: Boolean, required: false },
+		 Tidy: { type: Boolean, required: false },
+		 Messy: { type: Boolean, required: false }
 		},
 		
-		BedTime:{
-		 time1: { type: String, required: false },
-		 time2: { type: String, required: false },
-		 time3: { type: String, required: false }
+		typeofperson:{
+			Quiet: { type: Boolean, required: false },
+		 Loud: { type: Boolean, required: false },
+		 Tidy: { type: Boolean, required: false },
+		 Messy: { type: Boolean, required: false }
 		},
 		
 		DoYouDrink:{
-		 Yes: { type: String, required: false },
-		 No: { type: String, required: false }
+		 Yes: { type: Boolean, required: false },
+		 No: { type: Boolean, required: false }
 		},
 		
 		DoYouSmoke:{
-		 Yes: { type: String, required: false },
-		 No: { type: String, required: false },
+		 Yes: { type: Boolean, required: false },
+		 No: { type: Boolean, required: false },
 		},
 		
 		LikeGoOut:{
-		 Yes: { type: String, required: false },
-		 No: { type: String, required: false }
+		 Yes: { type: Boolean, required: false },
+		 No: { type: Boolean, required: false }
 		},
 		
 		Workhours:{
-		 FullTime: { type: String, required: false },
-		 PartTime: { type: String, required: false }, 
-		 StudentFullTime: { type: String, required: false },
-		 StudentPartTime: { type: String, required: false }
+		 FullTime: { type: Boolean, required: false },
+		 PartTime: { type: Boolean, required: false }, 
+		 StudentFullTime: { type: Boolean, required: false },
+		 StudentPartTime: { type: Boolean, required: false }
 		},
-		
+		BedTime:{
+		 time1: { type: Boolean, required: false },
+		 time2: { type: Boolean, required: false },
+		 time3: { type: Boolean, required: false }
+		},
+		RelationshipStatus:{
+			Single: { type: Boolean, required: false },
+			onRelationship: { type: Boolean, required: false },
+			Married: { type: Boolean, required: false }
+			
+		},
 		
 		
 	},  

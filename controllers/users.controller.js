@@ -10,6 +10,7 @@ router.put('/questions', updateUserQuestions);
 router.get('/questions', getUserAllQuestions);
 router.get('/uploads', profileImageData);
 router.get('/fetchAllUsersDetails', getAllUserDetails);
+router.get('/viewRoommateProfile/:id', fetchRoommateById);
 router.get('/fetchAllAgentDetails', getAllAgentDetails);
 router.get('/agentsViewbyuser', agentsViewbyUser);
 router.get('/current', getCurrentUserDetails);
@@ -108,6 +109,20 @@ function getUserById(req, res, next) {
         .then(user => user ? res.json(user) : res.sendStatus(404))
         .catch(err => next(err));
 }
+
+function fetchRoommateById(req, res, next) {
+    const currentUser = req.user;
+    const id = parseInt(req.params.id);
+    // only allow admins to access other user records
+    if (id !== currentUser.sub && currentUser.role !== Role.User) {
+        return res.status(401).json({ message: 'Unauthorized User' });
+    }
+
+    userService.getById(req.params.id) 
+        .then(user => user ? res.json(user) : res.sendStatus(404))
+        .catch(err => next(err));
+}
+
 
 function getAllUserDetails(req, res, next) {
 	const currentUser = req.user;

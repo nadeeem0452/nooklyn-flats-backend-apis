@@ -5,10 +5,10 @@ module.exports = (app) => {
     app.post('/favouriteList', lists.create);
 
     // Retrieve all List
-    app.get('/fetchallFavList', lists.fetchallFavList);
+    app.get('/fetchallFavListByAgent', lists.fetchallFavListByAgent);
 	
 	 // Retrieve all List By User
-   // app.get('/findAllRoomsByUser', lists.findAllByUser);
+    app.get('/fetchallFavListByUser', lists.fetchallFavListByUser);
 
     // Retrieve a single List with noteId
        app.get('/fetchallFavList/:listId', lists.findFavOne);
