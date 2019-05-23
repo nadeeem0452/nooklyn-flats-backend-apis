@@ -9,63 +9,45 @@ const schema = new Schema({
 	questionsNecessary: { type: String, required: false },
     interestedRoommate: { type: String, required: false },
 	 questions: {
-		
-		LookingRoommate:{
-		 Quiet: { type: Boolean, required: false },
-		 Loud: { type: Boolean, required: false },
-		 Tidy: { type: Boolean, required: false },
-		 Messy: { type: Boolean, required: false }
-		},
-		
-		LookingInRoommates:{
-		 Quiet: { type: Boolean, required: false },
-		 Loud: { type: Boolean, required: false },
-		 Tidy: { type: Boolean, required: false },
-		 Messy: { type: Boolean, required: false }
-		},
-		
-		typeofperson:{
-			Quiet: { type: Boolean, required: false },
-		 Loud: { type: Boolean, required: false },
-		 Tidy: { type: Boolean, required: false },
-		 Messy: { type: Boolean, required: false }
-		},
-		
-		DoYouDrink:{
-		 Yes: { type: Boolean, required: false },
-		 No: { type: Boolean, required: false }
-		},
-		
-		DoYouSmoke:{
-		 Yes: { type: Boolean, required: false },
-		 No: { type: Boolean, required: false },
-		},
-		
-		LikeGoOut:{
-		 Yes: { type: Boolean, required: false },
-		 No: { type: Boolean, required: false }
-		},
-		
-		Workhours:{
-		 FullTime: { type: Boolean, required: false },
-		 PartTime: { type: Boolean, required: false }, 
-		 StudentFullTime: { type: Boolean, required: false },
-		 StudentPartTime: { type: Boolean, required: false }
-		},
-		BedTime:{
-		 time1: { type: Boolean, required: false },
-		 time2: { type: Boolean, required: false },
-		 time3: { type: Boolean, required: false }
-		},
-		RelationshipStatus:{
-			Single: { type: Boolean, required: false },
-			onRelationship: { type: Boolean, required: false },
-			Married: { type: Boolean, required: false }
+		 
+					 LookingRoommate: {
+						type: String,
+						"enum": ["Quiet", "Loud", "Tidy", "Messy"]
+					},
 			
-		},
+					
+					LookingInRoommates:{
+					 type: String,
+								"enum": ["Quiet", "Loud", "Tidy", "Messy"]
+					},
+					
+					typeofperson:{
+						type: String,
+								"enum": ["Quiet", "Loud", "Tidy", "Messy"]
+					},
+					
+					DoYouDrink:{ type: Boolean, required: false, default: false },
+							
+					DoYouSmoke:{ type: Boolean, required: false, default: false },
+							
+					LikeGoOut:{ type: Boolean, required: false, default: false },
+					
+					Workhours:{ 
+							type: String, 
+							 "enum": ["FullTime", "PartTime", "StudentFullTime", "StudentPartTime"]
+					 },
+					BedTime:{ 
+							 type: String, 
+							 "enum": ["time1", "time2", "time3" ]
+					},
+					RelationshipStatus:{  
+						 type: String, 
+						"enum": ["Single", "onRelationship", "Married"]
+						
+					},
 		
 		
-	},  
+			    },  
 	
 	Images:{
 		
@@ -90,12 +72,12 @@ const schema = new Schema({
 					
 					  
 	
-	},
+			},
 	
-	  DOB: { type: Date, default: Date.now },	
-	  gender: { type: String },	
-      Role: { type: String, required: true },
-     createdDate: { type: Date, default: Date.now }
+	DOB: { type: Date, default: Date.now },	
+	gender: { type: String },	
+	Role: { type: String, required: true },
+	createdDate: { type: Date, default: Date.now }
 });
 
 schema.set('toJSON', { virtuals: true });

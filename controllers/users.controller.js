@@ -97,20 +97,46 @@ function matchRoommates(req, res, next) {
         console.log(result);
     });
 	*/
+	 const id = parseInt(req.params.id);
+	 
+	  const currentUser = req.user;
+	  
+	  //console.log(currentUser);
+	  
+	  
+	   		// const LookingRoommate = new User({
+       // LookingRoommate: req.body.LookingRoommate
+       
+   // });
+	 	 	  
+	  //var LookingRoommate =  User.questions.LookingRoommate ;
+	  
+	  //console.log(LookingRoommate);
+	 	   
+	 // var LookingInRoommates =  User.questions.LookingInRoommates;
+	  
+	 // var typeofperson = User.questions.typeofperson ;
+	 
+	 
+	//var rules = [{ LookingRoommate: currentUser.questions.LookingRoommate }, { LookingInRoommates: currentUser.questions.LookingInRoommates }, { typeofperson: currentUser.questions.typeofperson }];
 	
-	var rules = [{'questions.LookingRoommate.Loud': "Active"}, { Role : "Admin" }];
+	var rules = [{ 'questions.LookingRoommate': "Tidy" }];
 	
 	//var rules = [{'questions.LookingRoommate.Loud': "true"}, { Role : "User" }];
 	
 	var MatchRoommates = db.User.aggregate(
-		//[ { $match : { Role : "Admin" }  } ]
-		[ { $match : {$and: rules }  } ]
-		//[ { $match : {$or: rules }  } ]
+	    // [ { $match : { $and: rules } } ]
+		//[ { $match : { Role : "User" }  } ]
+		  [ { $match : {$and: rules }  } ]
+	   //  [ { $group : { questions : rules } } ]
+		//[  { $group : { _id : id, questions: { $push: "$$ROOT" } } } ]
+		//[   { $group: { _id: "$item", mergedSales: { $mergeObjects: "$questions" } } }	]
+			
 		
 	, function (err, result) {
         if (err) { 
            res.status(500).send({
-            message: err.message || "Some error occurred while retrieving Favourite Roommate."
+            message: err.message || "Some error occurred while retrieving Matching User List."
         });
         }
 		res.status(200).send(result);
@@ -122,13 +148,10 @@ function matchRoommates(req, res, next) {
 						LookingRoommate: "false1111111"	
 						}
 					}*/
-   const currentUser = req.user;
-    const id = parseInt(req.params.id);
+  
    
-         
-     
-	   
-	   
+   
+   
   /*  User.find(req.user.sub)
         .then(user => user ? res.json(user) : res.sendStatus(404))
         .catch(err => next(err)); */
@@ -157,7 +180,14 @@ function updateUserQuestions(req, res, next) {
 
 }
 function _delete(req, res, next) {
-    userService.delete(req.user.sub)
+	 const currentUser = req.user;
+    const id = parseInt(req.params.id);
+    // only allow admins to access other user records
+    /* if (id !== currentUser.sub && currentUser.role !== Role.Admin ) {
+        return res.status(401).json({ message: 'Unauthorized Admin' });
+    } */
+	
+    userService.delete(req.params.id)
         .then(() => res.json({ message: "User Deleted successfully" }))
         .catch(err => next(err));
 }
