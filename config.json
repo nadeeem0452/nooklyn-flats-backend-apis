@@ -2,4 +2,4 @@
     "connectionString": "mongodb+srv://nooklyn-flats-backend-apis:123321nk@cluster0-6mbxf.mongodb.net/nooklyn-flats-backend-apis?retryWrites=true",
     "secret": "THIS IS USED TO SIGN AND VERIFY JWT TOKENS, REPLACE IT WITH YOUR OWN SECRET, IT CAN BE ANY STRING"    
 }
-     
+   
