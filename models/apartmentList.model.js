@@ -27,10 +27,4 @@ ListSchema.set('toJSON', { virtuals: true });
 
 module.exports = mongoose.model('ApartmentList', ListSchema);
 
-//module.exports = mongoose.model('User', schema);  
 
-//var List  = mongoose.model('List', ListSchema);
-
-//var User = mongoose.model('User', schema);
-
-//User.find().populate("List");

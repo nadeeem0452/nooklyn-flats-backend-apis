@@ -24,6 +24,9 @@ exports.create = (req, res) => {
 		currentUser: req.user.sub
 				
     });
+	
+	
+
 
 	  // Save List in the database
 	  
@@ -75,6 +78,8 @@ exports.accept = (req, res) => {
 	if(  accecptSentApplications.AppliedList_Id == "" ){
 		return res.status(401).json({ message: 'Applied List Id cant empty' });
     }
+	
+	
 	
     accecptSentApplications.save()
     .then(data => {
@@ -154,9 +159,9 @@ exports.findOne = (req, res) => {
         return res.status(401).json({ message: 'Unauthorized Agent' });
     }
 	
+	//return res.send({User_id:req.body.User_id});
 	
-	
-    ListSentApplication.findById(req.params.listId)
+     ListSentApplication.findById(req.params.listId)
     .then(listSentApplications => {
         if(!listSentApplications) {
             return res.status(404).send({
@@ -173,7 +178,7 @@ exports.findOne = (req, res) => {
         return res.status(500).send({
             message: "Error retrieving List Applications with id " + req.params.listId
         });
-    });
+    }); 
 };
 
 

@@ -4,9 +4,7 @@ const Schema = mongoose.Schema;
 
 const favouriteSchema = new Schema({
 		
-		favourite: { type: String, required: true },
-		
-		unFavourite: { type: Boolean, required: false },
+		favourite: { type: Boolean, required: true },
 		
 		Userid: { type:String, required: true },
 		

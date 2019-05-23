@@ -1,7 +1,14 @@
 ﻿const FavouriteRoommates = require('../models/favouriteRoommate.model.js');
+const getAllUserDetails = require('./users.controller.js');
+
+//console.log(getAllUserDetails);
+
  //const listId = require('./roomsList.Controller.js');
 const Role = require('../_helpers/role.js');
 
+const config = require('../config/db.js');
+
+//console.log(config.users.find( { _id: 5 } ));
  
 // Create and Save a new List
 exports.create = (req, res) => {
@@ -64,6 +71,27 @@ exports.fetchAllRoommateByuser = (req, res) => {
     FavouriteRoommates.find()
     .then(lists => {
         res.send(lists);
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message || "Some error occurred while retrieving Favourite Roommate."
+        });
+    });
+};
+
+
+// Retrieve and return all lists from the database.
+exports.matchUsers = (req, res) => {
+	
+	const currentUser = req.user;
+    const id = parseInt(req.params.id);
+    // only allow admins to access other user records
+    if (id !== currentUser.sub && currentUser.role !== Role.User) {
+        return res.status(401).json({ message: 'Unauthorized User' });
+    }
+	
+    FavouriteRoommates.find()
+    .then(getAllUserDetails => {
+        res.send(getAllUserDetails);
     }).catch(err => {
         res.status(500).send({
             message: err.message || "Some error occurred while retrieving Favourite Roommate."

@@ -60,7 +60,6 @@ exports.create = (req, res) => {
 									PhotosAndMedia: req.body.PhotosAndMedia,
 									ProvideGeneralAvailabilityByDay: req.body.ProvideGeneralAvailabilityByDay,
 									AllowRentalApplications: req.body.AllowRentalApplications,
-									AllowRentalApplications: req.body.AllowRentalApplications,
 									agentId: req.user.sub,
 									createdDate: req.body.createdDate
 		

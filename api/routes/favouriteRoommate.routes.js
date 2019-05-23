@@ -8,6 +8,9 @@ module.exports = (app) => {
     // Retrieve all favourite Roomate
     app.get('/fetchAllRoommateByuser', lists.fetchAllRoommateByuser);
 	
+	//match Roommates By User
+    app.get('/matchUsers', lists.matchUsers);
+	
 	 // Retrieve all List By User
    // app.get('/fetchallFavListByUser', lists.fetchallFavListByUser);
 

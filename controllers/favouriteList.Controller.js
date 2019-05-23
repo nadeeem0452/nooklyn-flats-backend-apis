@@ -25,8 +25,7 @@ exports.create = (req, res) => {
     // Create a List
     const favouritelist = new FavouriteList({
         favourite: req.body.favourite,
-        unFavourite: req.body.unFavourite,
-		Userid: currentUser.sub,
+        Userid: currentUser.sub,
 		room_list_id: req.body.room_list_id
 		
     });

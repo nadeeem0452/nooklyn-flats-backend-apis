@@ -1,7 +1,12 @@
 ﻿const express = require('express');
+//const aggregate = require('aggregate');
 const router = express.Router();
 const userService = require('../api/services/user.service');
+const User = require('../models/user.model.js');
 const Role = require('_helpers/role');
+const db = require('config/db');
+
+//console.log(db);
 
 // routes
 router.post('/authenticate', authenticate);
@@ -10,6 +15,7 @@ router.put('/questions', updateUserQuestions);
 router.get('/questions', getUserAllQuestions);
 router.get('/uploads', profileImageData);
 router.get('/fetchAllUsersDetails', getAllUserDetails);
+router.get('/matchRoommates', matchRoommates);
 router.get('/viewRoommateProfile/:id', fetchRoommateById);
 router.get('/fetchAllAgentDetails', getAllAgentDetails);
 router.get('/agentsViewbyuser', agentsViewbyUser);
@@ -69,6 +75,67 @@ function getUserAllQuestions(req, res, next) {
         .then(user => user ? res.json(user.questions) : res.sendStatus(404))
         .catch(err => next(err));
 }
+
+var getBalance = function(accountId) {
+   
+}
+
+
+function matchRoommates(req, res, next) {
+    
+    /** db.users.aggregate(
+    [ { $match : { questions : questions } } ]
+	); ****/
+	/*
+	db.User.aggregate(
+		[ { $match : { Role : "Admin" } } ]
+	, function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        console.log(result);
+    });
+	*/
+	
+	var rules = [{'questions.LookingRoommate.Loud': "Active"}, { Role : "Admin" }];
+	
+	//var rules = [{'questions.LookingRoommate.Loud': "true"}, { Role : "User" }];
+	
+	var MatchRoommates = db.User.aggregate(
+		//[ { $match : { Role : "Admin" }  } ]
+		[ { $match : {$and: rules }  } ]
+		//[ { $match : {$or: rules }  } ]
+		
+	, function (err, result) {
+        if (err) { 
+           res.status(500).send({
+            message: err.message || "Some error occurred while retrieving Favourite Roommate."
+        });
+        }
+		res.status(200).send(result);
+        
+    });
+ 
+					/*{ $match: {
+						questions:{
+						LookingRoommate: "false1111111"	
+						}
+					}*/
+   const currentUser = req.user;
+    const id = parseInt(req.params.id);
+   
+         
+     
+	   
+	   
+  /*  User.find(req.user.sub)
+        .then(user => user ? res.json(user) : res.sendStatus(404))
+        .catch(err => next(err)); */
+		
+
+}
+
 
 function profileImageData(req, res, next) {
     userService.profileImageData(req.user.sub)
