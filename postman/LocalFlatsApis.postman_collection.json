@@ -194,7 +194,8 @@
 						"users",
 						"userRole"
 					]
-				}
+				},
+				"description": "This is used only to know What is role of user Its used by Developer"
 			},
 			"response": []
 		},
@@ -284,7 +285,7 @@
 			"response": []
 		},
 		{
-			"name": "UserUpdateQuestions",
+			"name": "UserUpdateQuestions  ---- By User",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -485,7 +486,7 @@
 			"response": []
 		},
 		{
-			"name": "CreatefavouriteList-By--User",
+			"name": "CreatefavouriteRoommateList-By--User",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -525,7 +526,7 @@
 			"response": []
 		},
 		{
-			"name": "FetchAllUserFavouriteRoommate",
+			"name": "FetchAllUserFavouriteRoommate ---by User",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -568,7 +569,7 @@
 			"response": []
 		},
 		{
-			"name": "FetchFavouriteListBy-User",
+			"name": "FetchFavouriteRoommateListBy-User",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -611,7 +612,7 @@
 			"response": []
 		},
 		{
-			"name": "FetchFavouriteListBy-Agent",
+			"name": "FetchFavouriteRoommateListBy-Agent",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -654,7 +655,7 @@
 			"response": []
 		},
 		{
-			"name": "FetchSingelFavouriteListBy-Agent",
+			"name": "FetchSingelFavouriteRoommate--By-Agent",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -1641,7 +1642,7 @@
 			"response": []
 		},
 		{
-			"name": "AgentRetriveRooms",
+			"name": "AgentRetriveRoomsList By--Agent",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -1684,7 +1685,7 @@
 			"response": []
 		},
 		{
-			"name": "AgentRetriveSingleRoom",
+			"name": "AgentRetriveSingleRoom By-Agent",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -1728,7 +1729,7 @@
 			"response": []
 		},
 		{
-			"name": "AgentUpdateRoom",
+			"name": "AgentUpdateRoom By-Agent",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -1769,7 +1770,7 @@
 			"response": []
 		},
 		{
-			"name": "AgentDeleteRoom",
+			"name": "AgentDeleteRoom By - Agent",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -1810,7 +1811,7 @@
 			"response": []
 		},
 		{
-			"name": "AgentCreateAparment",
+			"name": "AgentCreateAparment By Agent",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -1851,7 +1852,7 @@
 			"response": []
 		},
 		{
-			"name": "AgentRetriveAparment",
+			"name": "AgentRetriveAparmentList By- Agent",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -1976,7 +1977,8 @@
 					"path": [
 						"findAllRoomCount"
 					]
-				}
+				},
+				"description": "This is used by Devloper for now"
 			},
 			"response": []
 		},
@@ -2020,7 +2022,8 @@
 						"CountListAgent",
 						""
 					]
-				}
+				},
+				"description": "This is used to Agent Dashboard to count Rooms List"
 			},
 			"response": []
 		},
@@ -2311,7 +2314,8 @@
 						"uploads",
 						""
 					]
-				}
+				},
+				"description": "This is not in use for Now"
 			},
 			"response": []
 		},
@@ -2345,7 +2349,8 @@
 						"users",
 						"authenticate"
 					]
-				}
+				},
+				"description": "This is not in use Its duplicate entry"
 			},
 			"response": []
 		}
