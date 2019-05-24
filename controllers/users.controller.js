@@ -76,86 +76,52 @@ function getUserAllQuestions(req, res, next) {
         .catch(err => next(err));
 }
 
-var getBalance = function(accountId) {
-   
-}
 
 
 function matchRoommates(req, res, next) {
     
-    /** db.users.aggregate(
-    [ { $match : { questions : questions } } ]
-	); ****/
-	/*
-	db.User.aggregate(
-		[ { $match : { Role : "Admin" } } ]
-	, function (err, result) {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        console.log(result);
-    });
-	*/
+   
 	 const id = parseInt(req.params.id);
 	 
 	  const currentUser = req.user;
 	  
-	  //console.log(currentUser);
 	  
-	  
-	   		// const LookingRoommate = new User({
-       // LookingRoommate: req.body.LookingRoommate
-       
-   // });
-	 	 	  
-	  //var LookingRoommate =  User.questions.LookingRoommate ;
-	  
-	  //console.log(LookingRoommate);
-	 	   
-	 // var LookingInRoommates =  User.questions.LookingInRoommates;
-	  
-	 // var typeofperson = User.questions.typeofperson ;
 	 
+	   if (id !== currentUser.sub && currentUser.role !== Role.User) {
+        return res.status(401).json({ message: 'Unauthorized User' });
+		
+    } 
+	
+	
+	 
+	var qlist = db.User.find(   { questions: "LookingRoommate" }, { $type: "questionsNecessary" }, { $type: "interestedRoommate" } );
+	
+	//var ac = db.User.findOne( { questions: "questions" } ).questions;
+
+  //var c = db.User.find( { "questions" : { $type : "questionsNecessary" } } );
+	
+	//console.log( ab );
 	 
 	//var rules = [{ LookingRoommate: currentUser.questions.LookingRoommate }, { LookingInRoommates: currentUser.questions.LookingInRoommates }, { typeofperson: currentUser.questions.typeofperson }];
 	
-	var rules = [{ 'questions.LookingRoommate': "Tidy" }];
+	var rules = [{ 'interestedRoommate': currentUser.qlist } ];
 	
 	//var rules = [{'questions.LookingRoommate.Loud': "true"}, { Role : "User" }];
 	
 	var MatchRoommates = db.User.aggregate(
-	    // [ { $match : { $and: rules } } ]
-		//[ { $match : { Role : "User" }  } ]
-		  [ { $match : {$and: rules }  } ]
-	   //  [ { $group : { questions : rules } } ]
-		//[  { $group : { _id : id, questions: { $push: "$$ROOT" } } } ]
-		//[   { $group: { _id: "$item", mergedSales: { $mergeObjects: "$questions" } } }	]
-			
-		
-	, function (err, result) {
-        if (err) { 
-           res.status(500).send({
-            message: err.message || "Some error occurred while retrieving Matching User List."
-        });
-        }
-		res.status(200).send(result);
+	   
+		  [ { $match : {$and: rules }  } ]	, function (err, result) {
+			  
+				if (err) { 
+				   res.status(500).send({
+					message: err.message || "Some error occurred while retrieving Matching User List."
+				});
+			}
+		  res.status(200).send(result);
         
     });
  
-					/*{ $match: {
-						questions:{
-						LookingRoommate: "false1111111"	
-						}
-					}*/
-  
-   
-   
-   
-  /*  User.find(req.user.sub)
-        .then(user => user ? res.json(user) : res.sendStatus(404))
-        .catch(err => next(err)); */
-		
+					
 
 }
 

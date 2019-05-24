@@ -16,7 +16,7 @@ const schema = new Schema({
 					},
 			
 					
-					LookingInRoommates:{
+					LookingInRoommates:{   
 					 type: String,
 								"enum": ["Quiet", "Loud", "Tidy", "Messy"]
 					},
@@ -30,8 +30,8 @@ const schema = new Schema({
 							
 					DoYouSmoke:{ type: Boolean, required: false, default: false },
 							
-					LikeGoOut:{ type: Boolean, required: false, default: false },
-					
+					LikeGoOut:{ type: Boolean, required: false, default: false },    
+					    
 					Workhours:{ 
 							type: String, 
 							 "enum": ["FullTime", "PartTime", "StudentFullTime", "StudentPartTime"]
