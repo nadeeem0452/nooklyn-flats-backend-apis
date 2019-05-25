@@ -35,7 +35,8 @@
 						"users",
 						"register"
 					]
-				}
+				},
+				"description": "User, Admin and Agent can register here"
 			},
 			"response": []
 		},
@@ -69,12 +70,13 @@
 						"users",
 						"authenticate"
 					]
-				}
+				},
+				"description": "User, agent and admin can login here through Token authentication"
 			},
 			"response": []
 		},
 		{
-			"name": "GetCurrentViewProfile",
+			"name": "GetCurrentUserDetails",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -84,7 +86,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJlODhlYTMyYjA5YzAzNTRmOWQiLCJyb2xlIjoiVXNlciIsImlhdCI6MTU1ODY5MjI4Nn0.vC5mM60bKrqE1Viej-LZiHJkfm_heWZ-m4MpE2sxMXo",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg2OTc0Njd9.Ahhq2J6xvAG3wXZHlQI6LrBnPaKNwOJK_4-sPc_H6a8",
 							"type": "string"
 						}
 					]
@@ -113,51 +115,8 @@
 						"users",
 						"current"
 					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GetCurrentUserDetails",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg2OTc0Njd9.Ahhq2J6xvAG3wXZHlQI6LrBnPaKNwOJK_4-sPc_H6a8",
-							"type": "string"
-						}
-					]
 				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "https://nooklyn-flats-backend-apis.herokuapp.com/users/current",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"users",
-						"current"
-					]
-				}
+				"description": "View User details or profile"
 			},
 			"response": []
 		},
@@ -172,7 +131,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2RlOGMzZWQ4ZmZlMDIwOWMxOWRkNzciLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE1NTgzNTM3MjB9.9zEpaBLQKFZB-NE5munuoxU0g4_Wzrq4fus8ldXMtW0",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg3NzIwNjV9.-rlimSKCaKzgCUOBOIayCziI4zm8PcdNVrYknf3eP14",
 							"type": "string"
 						}
 					]
@@ -195,7 +154,7 @@
 						"userRole"
 					]
 				},
-				"description": "This is used only to know What is role of user Its used by Developer"
+				"description": "This is used only to know What is role of user."
 			},
 			"response": []
 		},
@@ -236,7 +195,8 @@
 						"users",
 						"5ce23c953fae3a291c92059f"
 					]
-				}
+				},
+				"description": "Update the Users profile"
 			},
 			"response": []
 		},
@@ -280,7 +240,8 @@
 						"users",
 						"questions"
 					]
-				}
+				},
+				"description": "View User's Questions details"
 			},
 			"response": []
 		},
@@ -322,48 +283,8 @@
 						"questions",
 						""
 					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "UserQuestionUpdate",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGE4NjIzMTE3ODJjMTA4NWJmMzEiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE1NTg2ODI4MDh9.VABLQ-khcYRB5pglqYd8npS2hPHkOhyIKZ3u_734kqY",
-							"type": "string"
-						}
-					]
 				},
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"questionsNecessary\": \"no\",\n    \"interestedRoommate\": \"no\"\n}"
-				},
-				"url": {
-					"raw": "https://nooklyn-flats-backend-apis.herokuapp.com/users/5ce68a862311782c1085bf31",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"users",
-						"5ce68a862311782c1085bf31"
-					]
-				}
+				"description": "Update questions details by User"
 			},
 			"response": []
 		},
@@ -401,7 +322,8 @@
 						"viewRoommateProfile",
 						"5ce68a862311782c1085bf31"
 					]
-				}
+				},
+				"description": "View User Profile"
 			},
 			"response": []
 		},
@@ -441,7 +363,8 @@
 					"path": [
 						"favouriteRoomate"
 					]
-				}
+				},
+				"description": "Mark Favourite Roomate By User"
 			},
 			"response": []
 		},
@@ -481,12 +404,13 @@
 					"path": [
 						"UnfavouriteRoomate"
 					]
-				}
+				},
+				"description": "Remove Mark Favourite Roommate By User"
 			},
 			"response": []
 		},
 		{
-			"name": "CreatefavouriteRoommateList-By--User",
+			"name": "CreatefavouriteRoomList-By--User",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -521,7 +445,8 @@
 					"path": [
 						"favouriteList"
 					]
-				}
+				},
+				"description": "Submit Favourite Room By User"
 			},
 			"response": []
 		},
@@ -564,12 +489,13 @@
 					"path": [
 						"fetchAllRoommateByuser"
 					]
-				}
+				},
+				"description": "View All User's Favourite Roommate Details By User"
 			},
 			"response": []
 		},
 		{
-			"name": "FetchFavouriteRoommateListBy-User",
+			"name": "FetchFavouriteRoomList   By-User",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -607,12 +533,13 @@
 					"path": [
 						"fetchallFavListByUser"
 					]
-				}
+				},
+				"description": "Submit Favourite to Room list By User"
 			},
 			"response": []
 		},
 		{
-			"name": "FetchFavouriteRoommateListBy-Agent",
+			"name": "FetchFavouriteRoomListBy-Agent",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -622,7 +549,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2RhNzcwZDEyMTE2NjI4YzQ0ZTJhMWUiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTc5OTM3OTB9.KYd3bbSdNfBlS_3jy7yHyqs_MucnJ4ItnjnY2aeolsM",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg3NzIwNjV9.-rlimSKCaKzgCUOBOIayCziI4zm8PcdNVrYknf3eP14",
 							"type": "string"
 						}
 					]
@@ -650,12 +577,13 @@
 					"path": [
 						"fetchallFavListByAgent"
 					]
-				}
+				},
+				"description": "Retrieve Favourite List By Agent"
 			},
 			"response": []
 		},
 		{
-			"name": "FetchSingelFavouriteRoommate--By-Agent",
+			"name": "FetchSingelFavouriteRoom--By-Agent",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -665,7 +593,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2UyM2M5NTNmYWUzYTI5MWM5MjA1OWYiLCJyb2xlIjoiVXNlciIsImlhdCI6MTU1ODMzMDU3Mn0.L6Wp_Sgj-Laiy-qNxI-WsnUPtq8-FoxYRiYWwex8Mwk",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg3NzIwNjV9.-rlimSKCaKzgCUOBOIayCziI4zm8PcdNVrYknf3eP14",
 							"type": "string"
 						}
 					]
@@ -699,51 +627,7 @@
 			"response": []
 		},
 		{
-			"name": "ViewAllApplicants-By-Agent",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg3MDE4NjV9.j1qbyyF5bVyCA4vdeejmZLjJKL4QR3CePyC1uMvPXds",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "https://nooklyn-flats-backend-apis.herokuapp.com/viewAllApplicant/5ce7e6a3d4d9ee1ae0471a73",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"viewAllApplicant",
-						"5ce7e6a3d4d9ee1ae0471a73"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "SubmitPropertApplicationToAgent-By-User",
+			"name": "SubmitPropertyApplicationToAgent-By-User",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -778,7 +662,8 @@
 					"path": [
 						"listApplication"
 					]
-				}
+				},
+				"description": "Submit Property Application to agent By User"
 			},
 			"response": []
 		},
@@ -818,7 +703,53 @@
 					"path": [
 						"applicationAccept"
 					]
-				}
+				},
+				"description": "List Application Accept or decline By Agent"
+			},
+			"response": []
+		},
+		{
+			"name": "ViewAllApplicants-By-Agent",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg3NzIwNjV9.-rlimSKCaKzgCUOBOIayCziI4zm8PcdNVrYknf3eP14",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://nooklyn-flats-backend-apis.herokuapp.com/viewAllApplicant/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"viewAllApplicant",
+						""
+					]
+				},
+				"description": "View All Applicants By Agent This is in pending to testing"
 			},
 			"response": []
 		},
@@ -833,7 +764,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg3MDE4NjV9.j1qbyyF5bVyCA4vdeejmZLjJKL4QR3CePyC1uMvPXds",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg3NzIwNjV9.-rlimSKCaKzgCUOBOIayCziI4zm8PcdNVrYknf3eP14",
 							"type": "string"
 						}
 					]
@@ -861,12 +792,13 @@
 					"path": [
 						"listApplicationByAgent"
 					]
-				}
+				},
+				"description": "Fetch All Applications By Agent, which created by Users"
 			},
 			"response": []
 		},
 		{
-			"name": "FetchListApplicationByID--Agent",
+			"name": "FetchSingleListApplicationByID--Agent",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -876,7 +808,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg3MDE4NjV9.j1qbyyF5bVyCA4vdeejmZLjJKL4QR3CePyC1uMvPXds",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg3NzIwNjV9.-rlimSKCaKzgCUOBOIayCziI4zm8PcdNVrYknf3eP14",
 							"type": "string"
 						}
 					]
@@ -905,7 +837,8 @@
 						"listApplication",
 						"5ce2af1d644ef21214b403df"
 					]
-				}
+				},
+				"description": "Retrive A single Application List By Agent"
 			},
 			"response": []
 		},
@@ -946,7 +879,8 @@
 						"listApplication",
 						"5ce391598495b72ae0b00424"
 					]
-				}
+				},
+				"description": "Update Application List By User"
 			},
 			"response": []
 		},
@@ -1002,7 +936,8 @@
 						"users",
 						"agentsViewbyuser"
 					]
-				}
+				},
+				"description": "View Agent Profile By User"
 			},
 			"response": []
 		},
@@ -1045,7 +980,8 @@
 					"path": [
 						"findAllRoomsByUser"
 					]
-				}
+				},
+				"description": "Retrieve RoomList to User Which created By Agent"
 			},
 			"response": []
 		},
@@ -1082,12 +1018,13 @@
 						"users",
 						"fetchAllUsersDetails"
 					]
-				}
+				},
+				"description": "View All Users By Admin"
 			},
 			"response": []
 		},
 		{
-			"name": "MtachRoommates--By-  User",
+			"name": "MatchRoommates--By-  User",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -1119,7 +1056,8 @@
 						"users",
 						"matchRoommates"
 					]
-				}
+				},
+				"description": "MatchRoommates Details to show new Users"
 			},
 			"response": []
 		},
@@ -1175,7 +1113,8 @@
 						"users",
 						"fetchAllAgentDetails"
 					]
-				}
+				},
+				"description": "View All Agents to admin"
 			},
 			"response": []
 		},
@@ -1216,7 +1155,8 @@
 						"users",
 						"5cd922f836ed7725288c0baf"
 					]
-				}
+				},
+				"description": "Admin can delete agents and users"
 			},
 			"response": []
 		},
@@ -1250,7 +1190,8 @@
 						"users",
 						"authenticate"
 					]
-				}
+				},
+				"description": "Agent Login "
 			},
 			"response": []
 		},
@@ -1265,7 +1206,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2RiYjZiYmM5YjBhZDE3YzAxMWRlZjQiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE1NTc5MjQzMTl9.M6ra1eBRfg_SQ4THihGtsk5vTHsBgI5Ts73mZJPnTkA",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGE4NjIzMTE3ODJjMTA4NWJmMzEiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE1NTg3NzM1MDl9.nSR7v_-Fx3jHJJLSzG8RqbeGBs9hUT6zFW_a8vzFdDc",
 							"type": "string"
 						}
 					]
@@ -1284,7 +1225,7 @@
 					"raw": "{\n\t\"username\": \"kunal@gmail.com\",\n\t\"password\": \"123456\"\n}"
 				},
 				"url": {
-					"raw": "https://nooklyn-flats-backend-apis.herokuapp.com/users/agentId",
+					"raw": "https://nooklyn-flats-backend-apis.herokuapp.com/users/agentId/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -1292,21 +1233,23 @@
 					"port": "4000",
 					"path": [
 						"users",
-						"agentId"
+						"agentId",
+						""
 					]
-				}
+				},
+				"description": "View Agents id It's in pending to testing by Developer"
 			},
 			"response": []
 		},
 		{
-			"name": "AgentUpdate",
+			"name": "AgentUpdateProfile--By Agent",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2QzYzExMzkwOTVkMTI5NTBlNWYzZTMiLCJpYXQiOjE1NTczODgxMjB9.tOvhbLJ0HaaTTGS8RBCy0snxmE2QNZDkotwtwmiy_wM",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg3NzIwNjV9.-rlimSKCaKzgCUOBOIayCziI4zm8PcdNVrYknf3eP14",
 							"type": "string"
 						}
 					]
@@ -1335,12 +1278,13 @@
 						"agents",
 						"5cd3f8587fddda0a28fc490a"
 					]
-				}
+				},
+				"description": "Update agent profile"
 			},
 			"response": []
 		},
 		{
-			"name": "UpdateAgentDetails",
+			"name": "UpdateAgent/UserProfileDetails",
 			"event": [
 				{
 					"listen": "test",
@@ -1428,7 +1372,8 @@
 					"path": [
 						"property"
 					]
-				}
+				},
+				"description": "Submit Property By Agent"
 			},
 			"response": []
 		},
@@ -1471,7 +1416,8 @@
 					"path": [
 						"property"
 					]
-				}
+				},
+				"description": "View Property By agent"
 			},
 			"response": []
 		},
@@ -1556,7 +1502,8 @@
 						"property",
 						"5cde8742d8ffe0209c19dd75"
 					]
-				}
+				},
+				"description": "Agent can delete own property"
 			},
 			"response": []
 		},
@@ -1597,12 +1544,13 @@
 						"property",
 						"5ce3eb3f02aebc283c99a995"
 					]
-				}
+				},
+				"description": "Update property by agent"
 			},
 			"response": []
 		},
 		{
-			"name": "CreateRoomsByAgent",
+			"name": "CreateRoomsList-By-Agent",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -1637,7 +1585,8 @@
 					"path": [
 						"roomsList"
 					]
-				}
+				},
+				"description": "Agent can create Room list"
 			},
 			"response": []
 		},
@@ -1652,7 +1601,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2Q5NDVlZmEzNzVhZDJlYTA3NGFhZjIiLCJyb2xlIjoiVXNlciIsImlhdCI6MTU1ODA4OTY3OX0.nB5msHFtgIvtZqWbXDPsNo8NMkbkH20OI67L-f_JwBY",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg3NzIwNjV9.-rlimSKCaKzgCUOBOIayCziI4zm8PcdNVrYknf3eP14",
 							"type": "string"
 						}
 					]
@@ -1680,7 +1629,8 @@
 					"path": [
 						"roomsList"
 					]
-				}
+				},
+				"description": "View Room list By Agent"
 			},
 			"response": []
 		},
@@ -1724,7 +1674,8 @@
 						"roomsList",
 						"5cda9d92a3369510d4d62bcd"
 					]
-				}
+				},
+				"description": "Retrieve Room  By Agent"
 			},
 			"response": []
 		},
@@ -1765,7 +1716,8 @@
 						"roomsList",
 						"5cda9ca0a3369510d4d62bc7"
 					]
-				}
+				},
+				"description": "Update Room Details By Agent"
 			},
 			"response": []
 		},
@@ -1806,19 +1758,20 @@
 						"roomsList",
 						"5cda9d92a3369510d4d62bcd"
 					]
-				}
+				},
+				"description": "Delete Room from list By Agent"
 			},
 			"response": []
 		},
 		{
-			"name": "AgentCreateAparment By Agent",
+			"name": "CreateAppartmentList--By Agent",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2RjMDllZjFiZDY0ZDEyMzg0ODljM2IiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTgwMDg2NTN9.N-9UAc8vkNCEbxKPRc47RT9ynqEczLMW9CEYXs46tcM",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg3NzIwNjV9.-rlimSKCaKzgCUOBOIayCziI4zm8PcdNVrYknf3eP14",
 							"type": "string"
 						}
 					]
@@ -1834,20 +1787,20 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"title\": \"This is the final Appartment title by Sidak\",\t\n\t\"description\": \"This is the list description\",\n\t\"address\": \"This is the List Adress\",\n\t\"ListImage\":{\n\t\t\n\t\t\"imageName\":\"Image Name\",\n\t\t\"imageData\": \"Image Data\"\n\t\t\n\t}\n\n}"
+					"raw": "{\n  \"title\": \"This is the Updated title\",\t\n\t\"description\": \"This is the list description\",\n\t\"address\": \"This is the List Adress\",\n\t\"ListImage\":{\n\t\t\n\t\t\"imageName\":\"Image Name\",\n\t\t\"imageData\": \"Image Data\"\n\t\t\n\t}\n\n}"
 				},
 				"url": {
-					"raw": "https://nooklyn-flats-backend-apis.herokuapp.com/aparmentList/",
+					"raw": "https://nooklyn-flats-backend-apis.herokuapp.com/createAparmentList",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "4000",
 					"path": [
-						"aparmentList",
-						""
+						"createAparmentList"
 					]
-				}
+				},
+				"description": "Create Appartment --By Agent"
 			},
 			"response": []
 		},
@@ -1878,7 +1831,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\n  \"username\": \"kunal@gmail.com\",\n  \"password\": \"123456\",\n  \"questionsNecessary\": \"yes\",\n  \"interestedRoommate\": \"no\",\n  \"questions\":{\n  \t          \n  \t          \"LookingRoommate\":{\n  \t          \t\t\t\t\t\t\n  \t          \t\t\t\t\t\"Quiet\": \"\",\n  \t          \t\t\t\t\t \"Loud\": \"Active\",\n  \t          \t\t\t\t\t \"Tidy\": \"\",\n  \t          \t\t\t\t\t \"Messy\": \"\"\n  \t          },\n  \t          \n  \t          \"LookingInRoommates\":{\n  \t          \t\t\t\t\t\t\n  \t          \t\t\t\t\t\"Quiet\": \"\",\n  \t          \t\t\t\t\t \"Loud\": \"\",\n  \t          \t\t\t\t\t \"Tidy\": \"\",\n  \t          \t\t\t\t\t \"Messy\": \"Active\"\n  \t          },\n  \t          \n  \t           \"BedTime\": {\n  \t          \t\t\t\t\t\t\n  \t          \t\t\t\t\t\"time1\": \"\",\n  \t          \t\t\t\t\t \"time2\": \"11pm\",\n  \t          \t\t\t\t\t \"Tidy\": \"\",\n  \t          \t\t\t\t\t \"time3\": \"\"\n  \t          },\n  \t          \n  \t           \"DoYouDrink\": {\n  \t          \t\t\t\t\t\t\n  \t          \t\t\t\t\t\"Yes\": \"\",\n  \t          \t\t\t\t\t \"No\": \"no\"\n  \t          },\n  \t          \n  \t           \"DoYouSmoke\": {\n  \t          \t\t\t\t\t\t\n  \t          \t\t\t\t\t\"Yes\": \"yes\",\n  \t          \t\t\t\t\t \"No\": \"\"\n  \t          },\n  \t          \n  \t           \"LikeGoOut\": {\n  \t          \t\t\t\t\t\t\n  \t          \t\t\t\t\t\"Yes\": \"\",\n  \t          \t\t\t\t\t \"No\": \"no\"\n  \t          },\n  \t          \n  \t          \"Workhours\":{\n  \t          \t\t\t\t\t\t\n  \t          \t\t\t\t\t\"FullTime\": \"\",\n  \t          \t\t\t\t\t \"PartTime\": \"Active\",\n  \t          \t\t\t\t\t \"StudentFullTime\": \"\",\n  \t          \t\t\t\t\t \"StudentPartTime\": \"\"\n  \t          }\n  \t          \n  }\n  \n}"
+					"raw": ""
 				},
 				"url": {
 					"raw": "https://nooklyn-flats-backend-apis.herokuapp.com/aparmentList/",
@@ -1891,7 +1844,8 @@
 						"aparmentList",
 						""
 					]
-				}
+				},
+				"description": "View Aprtments by Agent"
 			},
 			"response": []
 		},
@@ -1906,7 +1860,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2Q2OGQwYzA2OGY0NDAwYTA2MjAwNWIiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTc3NTQ5ODF9.vASGfD0K8rlRyPHW5S-CPIbrNIKorpl7JWeXPj3q7-0",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg3NzIwNjV9.-rlimSKCaKzgCUOBOIayCziI4zm8PcdNVrYknf3eP14",
 							"type": "string"
 						}
 					]
@@ -1934,7 +1888,8 @@
 					"path": [
 						"aprtmentListCount"
 					]
-				}
+				},
+				"description": "Appartment Counts By agent"
 			},
 			"response": []
 		},
@@ -1949,7 +1904,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2Q2OGQwYzA2OGY0NDAwYTA2MjAwNWIiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTc3NTQ5ODF9.vASGfD0K8rlRyPHW5S-CPIbrNIKorpl7JWeXPj3q7-0",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg3NzIwNjV9.-rlimSKCaKzgCUOBOIayCziI4zm8PcdNVrYknf3eP14",
 							"type": "string"
 						}
 					]
@@ -1978,7 +1933,7 @@
 						"findAllRoomCount"
 					]
 				},
-				"description": "This is used by Devloper for now"
+				"description": "This is used by Devloper for now This is in Pending to testing for agent"
 			},
 			"response": []
 		},
@@ -1993,7 +1948,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2Q2OGQwYzA2OGY0NDAwYTA2MjAwNWIiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTc3NTQ5ODF9.vASGfD0K8rlRyPHW5S-CPIbrNIKorpl7JWeXPj3q7-0",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg3NzIwNjV9.-rlimSKCaKzgCUOBOIayCziI4zm8PcdNVrYknf3eP14",
 							"type": "string"
 						}
 					]
@@ -2023,7 +1978,7 @@
 						""
 					]
 				},
-				"description": "This is used to Agent Dashboard to count Rooms List"
+				"description": "This is in pending to testing for developer"
 			},
 			"response": []
 		},
@@ -2038,7 +1993,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2Q2OGQwYzA2OGY0NDAwYTA2MjAwNWIiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTc3NTQ5ODF9.vASGfD0K8rlRyPHW5S-CPIbrNIKorpl7JWeXPj3q7-0",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg3NzIwNjV9.-rlimSKCaKzgCUOBOIayCziI4zm8PcdNVrYknf3eP14",
 							"type": "string"
 						}
 					]
@@ -2089,8 +2044,8 @@
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -2108,7 +2063,8 @@
 						"aparmentList",
 						"5cd96b177b3e3a086c7cded1"
 					]
-				}
+				},
+				"description": "AGent can delete Apartment"
 			},
 			"response": []
 		},
@@ -2130,8 +2086,8 @@
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -2149,7 +2105,8 @@
 						"aparmentList",
 						"5cd96a71cb6f2e2f0016e8d1"
 					]
-				}
+				},
+				"description": "Update the Aprtment Details by Agent"
 			},
 			"response": []
 		},
@@ -2164,7 +2121,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2Q2OGQwYzA2OGY0NDAwYTA2MjAwNWIiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTc3NDgxMDN9.FTGnaQGwrl7Jf5CHA52kZw1Iae6QpGMfQRnpaBqEsdk",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg3NzIwNjV9.-rlimSKCaKzgCUOBOIayCziI4zm8PcdNVrYknf3eP14",
 							"type": "string"
 						}
 					]
@@ -2186,90 +2143,8 @@
 						"users",
 						"agentRole"
 					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PropertyPostListing",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2NhYzVkNTAwMDliMDBjNDAzNmI4YjMiLCJpYXQiOjE1NTY4MDMxMTR9._wJ5LlslHbDhXxYtCtUIZhS_z9ArVWYNw-tXorHz3Fk",
-							"type": "string"
-						}
-					]
 				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \n   \"title\": \"Tittle\",\n   \"description\": \"description\",\n   \"address\": \"Adreess goes here\",\n   \"ListImage\":{\n   \t\t\t\t\"imageName\": \"Listing Imgae Name\",\n   \t\t\t\t\"imageData\": \"This is listing image data\"\n   \t\n                }\n                \n}"
-				},
-				"url": {
-					"raw": "https://nooklyn-flats-backend-apis.herokuapp.com/lists",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"lists"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PropertyGetListing",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2RhNzVkODEyMTE2NjI4YzQ0ZTJhMWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTc5MDMxMzZ9.xL7MBBC9TRpVPY5vIZEKHxZiZTwlYSrExAV21olB3MU",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\n   \"title\": \"My First List\",\n   \"content\": \"this is first content of first list\"\n\n}"
-				},
-				"url": {
-					"raw": "https://nooklyn-flats-backend-apis.herokuapp.com/lists",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"lists"
-					]
-				}
+				"description": "Get Agent Id By Agent"
 			},
 			"response": []
 		},
@@ -2316,41 +2191,6 @@
 					]
 				},
 				"description": "This is not in use for Now"
-			},
-			"response": []
-		},
-		{
-			"name": "UserLoginAndAgentGetToken Copy",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"username\": \"nadeem1@gmail.com\",\n\t\"password\": \"123456\"\n}"
-				},
-				"url": {
-					"raw": "https://nooklyn-flats-backend-apis.herokuapp.com/users/authenticate",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"users",
-						"authenticate"
-					]
-				},
-				"description": "This is not in use Its duplicate entry"
 			},
 			"response": []
 		}
