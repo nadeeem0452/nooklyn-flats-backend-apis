@@ -11,7 +11,7 @@ module.exports = (app) => {
     app.get('/property/:listId', properties.findOne);
 
     // Update a List with noteId
-    app.put('/property/:listId', properties.update);
+    app.put('/property/:listId', properties.update); 
 
     // Delete a List with noteId
     app.delete('/property/:listId', properties.delete);

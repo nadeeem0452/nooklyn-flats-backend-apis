@@ -21,9 +21,6 @@ app.get('/', (req, res) => {
 // api routes        
 app.use('/users', require('./controllers/users.controller'));
 
-// api agent
-//require('./Dashboard/agent/agent.js')(app);
-
 // Apartments Lists routes
 require('./api/routes/apartmentList.routes.js')(app);
 
@@ -33,8 +30,8 @@ require('./api/routes/agentPropertyList.routes.js')(app);
 //Agent List Count
 require('./api/routes/agentCreatedlistcount.route.js')(app);
 
-//Favourite List
-require('./api/routes/favouriteList.route.js')(app);
+//Favourite Agent List
+require('./api/routes/favouriteAgentList.route.js')(app);
 
 //Favourite Roommates
 require('./api/routes/favouriteRoommate.routes.js')(app);
