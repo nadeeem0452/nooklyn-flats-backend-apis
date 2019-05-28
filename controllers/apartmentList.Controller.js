@@ -1,5 +1,5 @@
 const ApartmentList = require('../models/apartmentList.model.js');
-const Role = require('../_helpers/role.js');
+const Role = require('../utils/role.js');
 
  
 // Create and Save a new List

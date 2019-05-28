@@ -3,7 +3,7 @@
 const router = express.Router();
 const userService = require('../api/services/user.service');
 const User = require('../models/user.model.js');
-const Role = require('_helpers/role');
+const Role = require('utils/role');
 const db = require('config/db');
 
 //console.log(db);

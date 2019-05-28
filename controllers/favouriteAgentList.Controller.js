@@ -1,6 +1,6 @@
 const FavouriteList = require('../models/favouriteAgentList.model.js');
  //const listId = require('./roomsList.Controller.js');
-const Role = require('../_helpers/role.js');
+const Role = require('../utils/role.js');
 
  
 // Create and Save a new List
