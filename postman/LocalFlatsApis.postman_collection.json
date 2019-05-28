@@ -57,7 +57,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"username\": \"nadeem@gmail.com\",\n\t\"password\": \"123456\"\n}"
+					"raw": "{\n\t\"username\": \"sidak@gmail.com\",\n\t\"password\": \"123456\"\n}"
 				},
 				"url": {
 					"raw": "https://nooklyn-flats-backend-apis.herokuapp.com/users/authenticate",
@@ -86,7 +86,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGJjODhlYTMyYjA5YzAzNTRmOWMiLCJyb2xlIjoiQWdlbnQiLCJpYXQiOjE1NTg2OTc0Njd9.Ahhq2J6xvAG3wXZHlQI6LrBnPaKNwOJK_4-sPc_H6a8",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGM1MjhlYTMyYjA5YzAzNTRmOWUiLCJyb2xlIjoiVXNlciIsImlhdCI6MTU1ODkzNzQwNH0.mZ0Qnqu0zcpluAZGiiLef1h1UCqmS-ajofVASQeLmVc",
 							"type": "string"
 						}
 					]
@@ -328,7 +328,7 @@
 			"response": []
 		},
 		{
-			"name": "MarkfavouriteRoommate-By-User",
+			"name": "Mark/UnmarkFavouriteRoommate-By-User",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -369,47 +369,6 @@
 			"response": []
 		},
 		{
-			"name": "UnMarkfavouriteRoommate-By-User",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2UyM2M5NTNmYWUzYTI5MWM5MjA1OWYiLCJyb2xlIjoiVXNlciIsImlhdCI6MTU1ODMzMDU3Mn0.L6Wp_Sgj-Laiy-qNxI-WsnUPtq8-FoxYRiYWwex8Mwk",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"favouriteRoommate\": \"My Favourite Roomate\",\n  \"favouriteRoommate_id\": \"123456792\",\n  \"unFavouriteRoommate\": \"true\"\n}\n\n  "
-				},
-				"url": {
-					"raw": "https://nooklyn-flats-backend-apis.herokuapp.com/UnfavouriteRoomate",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"UnfavouriteRoomate"
-					]
-				},
-				"description": "Remove Mark Favourite Roommate By User"
-			},
-			"response": []
-		},
-		{
 			"name": "FetchAllUserFavouriteRoommate ---by User",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -420,7 +379,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2UyM2M5NTNmYWUzYTI5MWM5MjA1OWYiLCJyb2xlIjoiVXNlciIsImlhdCI6MTU1ODMzMDU3Mn0.L6Wp_Sgj-Laiy-qNxI-WsnUPtq8-FoxYRiYWwex8Mwk",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGM1MjhlYTMyYjA5YzAzNTRmOWUiLCJyb2xlIjoiVXNlciIsImlhdCI6MTU1OTA1MDYyMX0.9tWqqtwn-dCnZYPp5Bhx93P9kAuwOjNWcqtufY0LdMY",
 							"type": "string"
 						}
 					]
@@ -1078,7 +1037,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U3N2U0ZjEyNDBjMTI0MDhiNjNkMDciLCJyb2xlIjoiVXNlciIsImlhdCI6MTU1ODY5NTc1OH0.M4MomTZBQryJpbQv194xWOj9_30jJlAwDmTTPsRIeHk",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2U2OGM1MjhlYTMyYjA5YzAzNTRmOWUiLCJyb2xlIjoiVXNlciIsImlhdCI6MTU1OTA1MDYyMX0.9tWqqtwn-dCnZYPp5Bhx93P9kAuwOjNWcqtufY0LdMY",
 							"type": "string"
 						}
 					]
