@@ -33,7 +33,7 @@
         "path": "^0.12.7",
         "rootpath": "^0.1.2",
         "todo": "^1.1.0",
-		"module: "*"    
+		"utils": "1.1.0"    
     },
     "devDependencies": {
         "babel-eslint": "^10.0.1",
@@ -46,7 +46,7 @@
         "eslint-plugin-jsx-a11y": "^6.2.1",
         "eslint-plugin-prettier": "^3.0.1",
         "eslint-plugin-react": "^7.13.0",
-        "nodemon": "^1.17.5",
+        "nodemon": "^1.17.5",   
         "prettier": "^1.17.0"
     },
     "keywords": [
