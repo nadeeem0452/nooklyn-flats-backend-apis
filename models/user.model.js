@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Role = require('utils/role');
+const Role = require('_helpers/role');
 
 
 const schema = new Schema({

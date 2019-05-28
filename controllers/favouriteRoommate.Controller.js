@@ -4,7 +4,7 @@ const getAllUserDetails = require('./users.controller.js');
 //console.log(getAllUserDetails);
 
  //const listId = require('./roomsList.Controller.js');
-const Role = require('../utils/role.js');
+const Role = require('../_helpers/role.js');
 
 const config = require('../config/db.js');
 

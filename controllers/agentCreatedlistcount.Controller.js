@@ -1,7 +1,7 @@
 const ApartmentList = require('../models/apartmentList.model.js');
 const count = require('count');
 const RoomsList = require('../models/roomsList.model.js');
-const Role = require('../utils/role.js');
+const Role = require('../_helpers/role.js');
 const db = require('../config/db.js');
 
 
