@@ -12,7 +12,7 @@ app.use(cors());
 
 // use JWT auth to secure the api
 app.use(jwt());    
-                  
+                            
 // define a simple route
 app.get('/', (req, res) => {
     res.json({"message": "Welcome to Lists application. Take lists quickly. Organize and keep track of all your lists."});
