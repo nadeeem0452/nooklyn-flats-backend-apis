@@ -1,4 +1,4 @@
 {
     "connectionString": "mongodb+srv://nooklyn-flats-backend-apis:123321nk@cluster0-6mbxf.mongodb.net/test?retryWrites=true",
     "secret": "9s83109d3+583493190"                   
-}    
+}        

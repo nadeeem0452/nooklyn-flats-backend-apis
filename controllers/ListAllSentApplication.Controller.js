@@ -1,7 +1,7 @@
 ﻿const ListSentApplication = require('../models/ListAllSentApplication.model.js');
 const Role = require('../_helpers/role.js');
 
- 
+       
 // Create and Save a new List
 exports.create = (req, res) => {
 	

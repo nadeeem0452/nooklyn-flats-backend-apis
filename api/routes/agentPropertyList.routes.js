@@ -6,7 +6,7 @@ module.exports = (app) => {
 
     // Retrieve all List
     app.get('/property', properties.findAll);
-
+   
     // Retrieve a single List with noteId
     app.get('/property/:listId', properties.findOne);
 
