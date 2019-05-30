@@ -35,7 +35,7 @@ exports.create = (req, res) => {
 	 // const ab = FavouriteList.findById(req.body.room_list_id);
 	  
 	if(  favouritelist.room_list_id == "" ){
-		return res.status(401).json({ message: 'Room List Id cant empty' });
+		return res.status(400).json({ message: 'Room List Id cant empty' });
     }
 	
     favouritelist.save()

@@ -32,8 +32,7 @@ exports.create = (req, res) => {
     // Create a List
     const favouriteRoommate = new FavouriteRoommates({
         favouriteRoommate: req.body.favouriteRoommate,
-        unFavouriteRoommate: req.body.unFavouriteRoommate,
-		Userid: currentUser.sub,
+       	Userid: currentUser.sub,
 		favouriteRoommate_id: req.body.favouriteRoommate_id
 		
     });
@@ -43,7 +42,7 @@ exports.create = (req, res) => {
 	 // const ab = FavouriteList.findById(req.body.room_list_id);
 	  
 	if(  favouriteRoommate.favouriteRoommate_id == "" ){
-		return res.status(401).json({ message: 'Roommmate Id cant empty' });
+		return res.status(400).json({ message: 'Roommmate Id cant empty' });     //Bad Request
     }
 	
     favouriteRoommate.save()
@@ -72,7 +71,7 @@ exports.fetchAllRoommateByuser = (req, res) => {
     .then(lists => {
         res.send(lists);
     }).catch(err => {
-        res.status(500).send({
+        res.status(404).send({
             message: err.message || "Some error occurred while retrieving Favourite Roommate."
         });
     });

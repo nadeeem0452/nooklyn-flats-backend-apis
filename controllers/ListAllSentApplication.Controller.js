@@ -33,7 +33,7 @@ exports.create = (req, res) => {
 	 // const ab = FavouriteList.findById(req.body.room_list_id);
 	  
 	if(  listSentApplications.AppliedList_Id == "" ){
-		return res.status(401).json({ message: 'Applied List Id cant empty' });
+		return res.status(400).json({ message: 'Applied List Id cant empty' });   //Bad Request
     }
 	
     listSentApplications.save()
@@ -41,7 +41,7 @@ exports.create = (req, res) => {
         res.send(data);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Some error occurred while creating the List."
+            message: err.message || "Some error occurred while creating the Application."
         });
     });
 };
@@ -76,7 +76,7 @@ exports.accept = (req, res) => {
 	 // const ab = FavouriteList.findById(req.body.room_list_id);
 	  
 	if(  accecptSentApplications.AppliedList_Id == "" ){
-		return res.status(401).json({ message: 'Applied List Id cant empty' });
+		return res.status(400).json({ message: 'Applied List Id cant empty' });
     }
 	
 	
