@@ -95,18 +95,18 @@ function matchRoommates(req, res, next) {
 	
 	
 	 
-	 var qlist = db.User.find(   {  } , function(err, result) {
+	 /* var qlist = db.User.find(   {  } , function(err, result) {
 			if (err) { 
 				   res.status(400).send({
 					message: err.message || "Some error occurred while retrieving Matching User List."
 				});
 			}
 			 res.status(200).send(result);
-		  });
+		  }); */
 		//console.log(qlist);		
 	
 		
-	//var rules = [{ LookingRoommate: currentUser.questions.LookingRoommate }, { LookingInRoommates: currentUser.questions.LookingInRoommates }, { typeofperson: currentUser.questions.typeofperson }];
+	var rules = [{ LookingRoommate: currentUser.questions.LookingRoommate }, { LookingInRoommates: currentUser.questions.LookingInRoommates }, { typeofperson: currentUser.questions.typeofperson }];
 	
 	var rules = [{ 'questions.LookingRoommate': currentUser.qlist } ];
 	
