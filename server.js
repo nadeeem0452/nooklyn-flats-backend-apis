@@ -11,15 +11,15 @@ app.use(bodyParser.json());
 app.use(cors());    
 
 // use JWT auth to secure the api
-app.use(jwt());
-
+app.use(jwt());    
+                  
 // define a simple route
 app.get('/', (req, res) => {
     res.json({"message": "Welcome to Lists application. Take lists quickly. Organize and keep track of all your lists."});
 });
          
 // api routes        
-app.use('/users', require('./controllers/users.controller'));
+app.use('/users', require('./controllers/users.controller'));    
 
 // Apartments Lists routes
 require('./api/routes/apartmentList.routes.js')(app);
