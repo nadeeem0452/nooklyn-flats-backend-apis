@@ -94,7 +94,7 @@ function matchRoommates(req, res, next) {
     } 
 	
 	
-	 
+	 var qlist = db.User.find(   { questions: "LookingRoommate" }, { $type: "questionsNecessary" }, { $type: "interestedRoommate" } );
 	 /* var qlist = db.User.find(   {  } , function(err, result) {
 			if (err) { 
 				   res.status(400).send({
@@ -106,9 +106,9 @@ function matchRoommates(req, res, next) {
 		//console.log(qlist);		
 	
 		
-	var rules = [{ LookingRoommate: currentUser.questions.LookingRoommate }, { LookingInRoommates: currentUser.questions.LookingInRoommates }, { typeofperson: currentUser.questions.typeofperson }];
+	//var rules = [{ LookingRoommate: currentUser.questions.LookingRoommate }, { LookingInRoommates: currentUser.questions.LookingInRoommates }, { typeofperson: currentUser.questions.typeofperson }];
 	
-	var rules = [{ 'questions.LookingRoommate': currentUser.qlist } ];
+	var rules = [{ 'LookingRoommate': currentUser.qlist } ];
 	
 	
 	
